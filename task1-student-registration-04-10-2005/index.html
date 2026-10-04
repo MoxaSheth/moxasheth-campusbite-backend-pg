@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Student Management System</h1>
+
+    <form id="studentForm">
+      <input type="hidden" id="studentId">
+
+      <div class="grid">
+        <div class="field">
+          <label>Student Name</label>
+          <input type="text" id="studentName">
+          <small id="studentNameError"></small>
+        </div>
+
+        <div class="field">
+          <label>Enrollment No</label>
+          <input type="text" id="enrollmentNo">
+          <small id="enrollmentNoError"></small>
+        </div>
+
+        <div class="field">
+          <label>Email</label>
+          <input type="email" id="email">
+          <small id="emailError"></small>
+        </div>
+
+        <div class="field">
+          <label>Mobile</label>
+          <input type="text" id="mobile" maxlength="10">
+          <small id="mobileError"></small>
+        </div>
+
+        <div class="field">
+          <label>Date of Birth</label>
+          <input type="date" id="dateOfBirth">
+          <small id="dateOfBirthError"></small>
+        </div>
+
+        <div class="field">
+          <label>Age</label>
+          <input type="number" id="age" min="18" max="60">
+          <small id="ageError"></small>
+        </div>
+
+        <div class="field">
+          <label>Gender</label>
+          <div class="options">
+            <label><input type="radio" name="gender" value="Male"> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Other"> Other</label>
+          </div>
+          <small id="genderError"></small>
+        </div>
+
+        <div class="field">
+          <label>Course</label>
+          <select id="course">
+            <option value="">Select Course</option>
+            <option>BCA</option>
+            <option>MCA</option>
+            <option>BBA</option>
+            <option>MBA</option>
+          </select>
+          <small id="courseError"></small>
+        </div>
+
+        <div class="field">
+          <label>Specialization</label>
+          <input type="text" id="specialization">
+          <small id="specializationError"></small>
+        </div>
+
+        <div class="field">
+          <label>Semester</label>
+          <select id="semester">
+            <option value="">Select Semester</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+          <small id="semesterError"></small>
+        </div>
+
+        <div class="field full">
+          <label>Address</label>
+          <textarea id="address"></textarea>
+          <small id="addressError"></small>
+        </div>
+
+        <div class="field">
+          <label>City</label>
+          <select id="city">
+            <option value="">Select City</option>
+            <option>Ahmedabad</option>
+            <option>Surat</option>
+            <option>Vadodara</option>
+            <option>Rajkot</option>
+            <option>Mumbai</option>
+          </select>
+          <small id="cityError"></small>
+        </div>
+
+        <div class="field">
+          <label>State</label>
+          <input type="text" id="state">
+          <small id="stateError"></small>
+        </div>
+
+        <div class="field">
+          <label>Skills</label>
+          <div class="options">
+            <label><input type="radio" name="skills" value="Java"> Java</label>
+            <label><input type="radio" name="skills" value="JavaScript"> JavaScript</label>
+            <label><input type="radio" name="skills" value="Python"> Python</label>
+            <label><input type="radio" name="skills" value="React"> React</label>
+          </div>
+          <small id="skillsError"></small>
+        </div>
+
+        <div class="field">
+          <label>Hobbies</label>
+          <div class="options">
+            <label><input type="radio" name="hobbies" value="Reading"> Reading</label>
+            <label><input type="radio" name="hobbies" value="Music"> Music</label>
+            <label><input type="radio" name="hobbies" value="Sports"> Sports</label>
+            <label><input type="radio" name="hobbies" value="Travel"> Travel</label>
+          </div>
+          <small id="hobbiesError"></small>
+        </div>
+
+        <div class="field">
+          <label>Passport Photo (JPG/PNG, max 2 MB)</label>
+          <input type="file" id="passportPhoto" accept=".jpg,.jpeg,.png">
+          <small id="passportPhotoError"></small>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button type="submit" id="saveButton">Add Student</button>
+        <button type="button" id="cancelButton" class="secondary">Cancel</button>
+      </div>
+    </form>
+
+    <h2>Student List</h2>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Enrollment</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Course</th>
+            <th>Semester</th>
+            <th>Gender</th>
+            <th>City</th>
+            <th>state</th>
+            <th>skills</th>
+            <th>Hobbies</th>
+            <th>Photo</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="studentTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

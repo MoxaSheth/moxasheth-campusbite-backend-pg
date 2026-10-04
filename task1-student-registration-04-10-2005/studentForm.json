@@ -1,0 +1,85 @@
+{
+  "formName": "Student Management System",
+  "technology": "JavaScript + JSON",
+  "operations": ["Create", "Read", "Update", "Delete"],
+  "fields": [
+    {
+      "name": "studentName",
+      "required": true,
+      "validation": "2-50 characters"
+    },
+    {
+      "name": "enrollmentNo",
+      "required": true,
+      "unique": true
+    },
+    {
+      "name": "email",
+      "required": true,
+      "validation": "valid email",
+      "unique": true
+    },
+    {
+      "name": "mobile",
+      "required": true,
+      "validation": "exactly 10 digits"
+    },
+    {
+      "name": "dateOfBirth",
+      "required": true
+    },
+    {
+      "name": "age",
+      "required": true,
+      "validation": "18-60"
+    },
+    {
+      "name": "gender",
+      "required": true,
+      "options": ["Male", "Female", "Other"]
+    },
+    {
+      "name": "course",
+      "required": true,
+      "type": "dropdown"
+    },
+    {
+      "name": "specialization",
+      "required": true
+    },
+    {
+      "name": "semester",
+      "required": true,
+      "validation": "1-6"
+    },
+    {
+      "name": "address",
+      "required": true
+    },
+    {
+      "name": "city",
+      "required": true,
+      "type": "dropdown"
+    },
+    {
+      "name": "state",
+      "required": true
+    },
+    {
+      "name": "skills",
+      "required": true,
+      "minimumSelections": 1
+    },
+    {
+      "name": "hobbies",
+      "required": true,
+      "minimumSelections": 1
+    },
+    {
+      "name": "passportPhoto",
+      "required": true,
+      "allowedTypes": ["JPG", "PNG"],
+      "maxSizeMB": 2
+    }
+  ]
+}
