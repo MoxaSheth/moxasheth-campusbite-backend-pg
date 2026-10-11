@@ -1,0 +1,79 @@
+* { box-sizing: border-box; }
+:root { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #172033; background: #f4f7fb; }
+body { margin: 0; }
+.site-header { background: linear-gradient(120deg, #173c78, #2866b1); color: white; padding: 34px max(22px, calc((100% - 1200px)/2)); }
+.eyebrow { font-size: .75rem; letter-spacing: .16em; font-weight: 800; opacity: .8; margin: 0 0 8px; }
+h1 { margin: 0; font-size: clamp(1.7rem, 4vw, 2.5rem); }
+.subtitle { margin: 8px 0 0; color: #e0eaff; }
+.container { max-width: 1200px; margin: 26px auto; padding: 0 18px; }
+.panel { background: white; border: 1px solid #e0e6ef; border-radius: 16px; padding: 24px; margin-bottom: 22px; box-shadow: 0 8px 24px rgba(27, 49, 84, .05); }
+.section-heading { display: flex; justify-content: space-between; gap: 16px; align-items: center; margin-bottom: 18px; }
+h2 { margin: 0 0 5px; font-size: 1.35rem; }
+.section-heading p { color: #65718a; margin: 0; font-size: .92rem; }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+label { display: flex; flex-direction: column; gap: 7px; font-size: .9rem; font-weight: 650; }
+input:not([type=checkbox]):not([type=radio]), select, textarea { width: 100%; border: 1px solid #ccd5e3; border-radius: 8px; padding: 10px 11px; font: inherit; color: #172033; background: #fff; }
+input:focus, select:focus, textarea:focus { outline: 3px solid #dbeafe; border-color: #3977c7; }
+fieldset { min-width: 0; margin: 0; border: 1px solid #d9e1ed; border-radius: 10px; padding: 12px; }
+legend { font-size: .9rem; font-weight: 700; padding: 0 5px; }
+.checks { display: flex; flex-wrap: wrap; gap: 10px 14px; }
+.checks label { display: inline-flex; flex-direction: row; align-items: center; font-weight: 500; gap: 6px; }
+.span-two { grid-column: span 2; }
+.actions, .toolbar { display: flex; flex-wrap: wrap; gap: 9px; }
+.actions { margin-top: 20px; }
+button { border: 0; border-radius: 8px; padding: 10px 14px; font: inherit; font-weight: 700; cursor: pointer; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+.primary { background: #225db0; color: white; }
+.secondary { background: #eaf0f8; color: #203958; }
+.danger { background: #ffebeb; color: #a32323; }
+.message { display: none; margin: 10px 0 14px; padding: 10px 12px; border-radius: 8px; font-size: .9rem; white-space: pre-line; }
+.message.show { display: block; }
+.message.success { color: #155d37; background: #e6f7ed; }
+.message.error { color: #922626; background: #fff0f0; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 800px; }
+th, td { padding: 12px 10px; text-align: left; vertical-align: top; border-bottom: 1px solid #e8edf4; }
+th { color: #596780; background: #f8fafd; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; }
+td { font-size: .88rem; }
+.student-photo { width: 58px; height: 58px; border-radius: 12px; object-fit: cover; background: #edf1f7; }
+.student-details { min-width: 280px; display: grid; grid-template-columns: repeat(2, minmax(130px, 1fr)); gap: 9px; }
+.student-details label { font-size: .76rem; color: #5d6b81; gap: 4px; }
+.student-details input, .student-details select, .student-details textarea { font-size: .8rem; padding: 7px !important; }
+.student-details .wide { grid-column: span 2; }
+.student-details .inline-checks { display: flex; flex-wrap: wrap; gap: 7px; }
+.student-details .inline-checks label { display: inline-flex; flex-direction: row; align-items: center; color: #26364f; }
+.student-details .inline-checks input { width: auto; }
+.editing { background: #fff9df !important; border-color: #d6a51d !important; }
+.row-actions { display: flex; flex-direction: column; gap: 7px; }
+.row-actions button { padding: 7px 9px; font-size: .8rem; }
+.tags { color: #53647e; line-height: 1.7; max-width: 180px; }
+.footnote, footer { color: #6b7890; font-size: .82rem; }
+footer { text-align: center; padding: 12px 18px 28px; }
+.empty { text-align: center; color: #6b7890; padding: 30px; }
+[hidden] { display: none !important; }
+@media (max-width: 720px) {
+  .panel { padding: 16px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .span-two { grid-column: auto; }
+  .responsive-heading { align-items: flex-start; flex-direction: column; }
+  .toolbar { width: 100%; }
+  .toolbar button { flex: 1; }
+}
+
+
+.student-entry { border: 1px solid #dce4ef; border-radius: 12px; padding: 18px; margin-bottom: 16px; background: #fbfcff; }
+.entry-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 16px; }
+.entry-heading h3 { margin: 0; font-size: 1.05rem; }
+.student-entry .form-grid { gap: 14px; }
+.student-row-editing td { background: #fffdf2; }
+@media (max-width: 520px) { .entry-heading { align-items: flex-start; flex-direction: column; } }
+
+/* One-click inline editing affordance */
+.student-details label { cursor: pointer; }
+.student-details label:hover input:disabled,
+.student-details label:hover select:disabled,
+.student-details label:hover textarea:disabled { border-color: #3977c7; background: #f4f8ff; }
+.student-row-editing .student-details label { cursor: text; }
+.student-row-editing .student-details input:not([type=checkbox]),
+.student-row-editing .student-details select,
+.student-row-editing .student-details textarea { min-width: 0; }

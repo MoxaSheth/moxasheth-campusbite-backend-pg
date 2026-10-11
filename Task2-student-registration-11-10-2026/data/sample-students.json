@@ -1,0 +1,21 @@
+[
+  {
+    "studentId": "sample-student-001",
+    "studentName": "Sample Student",
+    "enrollmentNo": "DEMO001",
+    "email": "sample@example.com",
+    "mobile": "9876543210",
+    "dateOfBirth": "2004-01-15",
+    "age": 22,
+    "gender": "Other",
+    "course": "MCA",
+    "specialization": "Computer Science",
+    "semester": 1,
+    "address": "Sample Address",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "skills": ["HTML", "JavaScript"],
+    "hobbies": ["Reading"],
+    "passportPhoto": ""
+  }
+]

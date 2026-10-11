@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">STUDENT MANAGEMENT</p>
+      <h1>Student Registration System</h1>
+      <p class="subtitle">Register, validate, edit, and manage student records.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div class="section-heading">
+        <div><h2>Register Students</h2><p>Add one or more student forms, then insert all valid records together.</p></div>
+      </div>
+      <div id="formMessage" class="message" role="status" aria-live="polite"></div>
+      <div id="registrationForms"></div>
+      <div class="actions">
+        <button class="secondary" type="button" id="addStudentFormBtn">+ Add Another Student Form</button>
+        <button class="primary" type="button" id="bulkInsertBtn">Bulk Insert Students</button>
+        <button class="secondary" type="button" id="clearFormsBtn">Clear All Forms</button>
+      </div>
+      <template id="studentFormTemplate">
+        <form class="student-entry" novalidate>
+          <div class="entry-heading"><h3 class="entry-title">Student 1</h3><button class="danger remove-form-btn" type="button">Remove Form</button></div>
+          <div class="form-grid">
+            <label>Student Name *<input name="studentName" type="text" maxlength="50" required></label>
+            <label>Enrollment No. *<input name="enrollmentNo" type="text" required></label>
+            <label>Email *<input name="email" type="email" required></label>
+            <label>Mobile *<input name="mobile" type="tel" inputmode="numeric" maxlength="10" required></label>
+            <label>Date of Birth *<input name="dateOfBirth" type="date" required></label>
+            <label>Age *<input name="age" type="number" min="18" max="60" required></label>
+            <label>Gender *
+              <select name="gender" required><option value="">Select gender</option><option>Male</option><option>Female</option><option>Other</option></select>
+            </label>
+            <label>Course *
+              <select name="course" required><option value="">Select course</option><option>MCA</option><option>BCA</option><option>BSc IT</option><option>BTech</option><option>Other</option></select>
+            </label>
+            <label>Specialization *<input name="specialization" type="text" required></label>
+            <label>Semester *
+              <select name="semester" required><option value="">Select semester</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select>
+            </label>
+            <label>City *<input name="city" type="text" required></label>
+            <label>State *<input name="state" type="text" required></label>
+            <label class="span-two">Address *<textarea name="address" rows="2" required></textarea></label>
+            <fieldset>
+              <legend>Skills * (select at least one)</legend>
+              <div class="checks">
+                <label><input type="checkbox" name="skills" value="HTML"> HTML</label>
+                <label><input type="checkbox" name="skills" value="CSS"> CSS</label>
+                <label><input type="checkbox" name="skills" value="JavaScript"> JavaScript</label>
+                <label><input type="checkbox" name="skills" value="Java"> Java</label>
+                <label><input type="checkbox" name="skills" value="Python"> Python</label>
+                <label><input type="checkbox" name="skills" value="SQL"> SQL</label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Hobbies * (select at least one)</legend>
+              <div class="checks">
+                <label><input type="checkbox" name="hobbies" value="Reading"> Reading</label>
+                <label><input type="checkbox" name="hobbies" value="Cricket"> Cricket</label>
+                <label><input type="checkbox" name="hobbies" value="Music"> Music</label>
+                <label><input type="checkbox" name="hobbies" value="Travel"> Travel</label>
+                <label><input type="checkbox" name="hobbies" value="Gaming"> Gaming</label>
+                <label><input type="checkbox" name="hobbies" value="Drawing"> Drawing</label>
+              </div>
+            </fieldset>
+            <label class="span-two">Passport Photo * (JPG/PNG, maximum 2 MB)
+              <input name="passportPhoto" type="file" accept="image/jpeg,image/png" required>
+            </label>
+          </div>
+        </form>
+      </template>
+    </section>
+    <section class="panel">
+      <div class="section-heading responsive-heading">
+        <div><h2>All Students</h2><p id="studentCount">0 student(s)</p></div>
+        <div class="toolbar">
+          <button type="button" class="secondary" id="bulkEditBtn">Bulk Edit</button>
+          <button type="button" class="primary" id="saveBulkBtn" hidden>Save Changes</button>
+          <button type="button" class="secondary" id="cancelBulkBtn" hidden>Cancel</button>
+          <button type="button" class="danger" id="bulkDeleteBtn">Bulk Delete Selected</button>
+        </div>
+      </div>
+      <div id="listMessage" class="message" role="status" aria-live="polite"></div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th><input id="selectAll" type="checkbox" aria-label="Select all students"></th><th>Photo</th><th>Student details</th><th>Skills / Hobbies</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="studentTableBody"></tbody>
+        </table>
+      </div>
+      <p class="footnote">Records are stored in this browser's Local Storage. Export or back up important data before clearing browser data.</p>
+    </section>
+  </main>
+  <footer>Student Registration System · JavaScript + JSON + Local Storage</footer>
+  <script src="js/validation.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/studentService.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
